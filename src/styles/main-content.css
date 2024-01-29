@@ -35,7 +35,7 @@
   width: 32px;
   height: 32px;
   background: var(--bg-icon);
-  background-color: var(--bg-arrow-color);
+  background-color: rgba(0, 0, 0, 7);
   border-radius: 50%;
   border: none;
   cursor: pointer;
@@ -75,7 +75,7 @@
 }
 
 .header__login .subscribe {
-  color: #a7a7a7;
+  color: var(--text-sub);
   font-size: 16px;
   font-weight: 700;
   background-color: transparent;
@@ -85,11 +85,29 @@
 .header__login .login {
   width: 100px;
   height: 48px;
-  color: #000;
+  color: var(--text-base-dark);
   font-size: 16px;
   font-weight: 700;
   border-radius: 40px;
 }
+
+/* HOVER */
+
+.header__search:hover {
+  border: 1px solid #fff;
+}
+
+.header__login .subscribe:hover {
+  transform: scale(1.04);
+  color: var(--text-base-light);
+}
+
+.header__login .login:hover {
+  transform: scale(1.04);
+}
+/* FIM HOVER */
+
+/*FIM HEADER */
 
 /* PLAYLIST */
 .playlist-container {
@@ -105,14 +123,14 @@
 }
 
 .playlist #greeting {
-  color: #fff;
+  color: var(--text-base-light);
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 48px;
 }
 
 .playlist .session {
-  color: #fff;
+  color: var(--text-base-light);
   font-size: 24px;
   font-weight: 700;
 }
@@ -134,17 +152,17 @@
 /* FIM SCROLL */
 
 .offer__list-item {
-  display: grid;
+  /* display: grid;
   justify-items: center;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
   gap: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 16px; */
 
   /* CODIGO COM JS CALCULANDO OS CARDS POR COLUNA */
-  display: grid;
+  display: grid; /* define o modelo de layout do elemento como uma grade */
   gap: 16px;
-  grid-gap: 32px;
+  grid-gap: 32px; /* não é usado mais */
   margin: 0 auto;
 }
 
@@ -159,7 +177,7 @@
 .cards span {
   padding: 16px;
   position: absolute;
-  color: #fff;
+  color: var(--text-base-light);
   font-size: 24px;
   font-weight: 700;
 }
@@ -234,10 +252,10 @@
 }
 
 .grid-container {
-  grid-gap: 24px;
+  grid-gap: var(--grid-gap);
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  min-width: 767px;
+  grid-template-columns: repeat(var(--column-count), minmax(0, 1fr));
+  min-width: var(--min-container-width);
 }
 
 .artist-card {
